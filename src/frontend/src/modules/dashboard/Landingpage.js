@@ -99,7 +99,7 @@ const [filteredData, setFilteredData] = useState([]);
                         <tbody>
                     
                             {
-                                filteredData.map((item) => {
+                                mydata.map((item) => {
                                 return (
                                     <tr key={item._id}>
                                         <th scope="row">{item._id}</th>
