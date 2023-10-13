@@ -10,7 +10,7 @@ const [filteredData, setFilteredData] = useState([]);
 
 
     const mygetalldata =async () => {
-       var res=await axios.get('http://localhost:7800/getdata').then((res) => {
+       var res=await axios.get('https://studentdatadashboard.onrender.com/getdata').then((res) => {
             console.log(res.data);
             setdata(res.data);
             
@@ -26,7 +26,7 @@ const [filteredData, setFilteredData] = useState([]);
       };
 
     const deleterecor = async(id)=>{
-        await axios.delete(`http://localhost:7800/deleterecord/${id}`).then((res)=>{
+        await axios.delete(`https://studentdatadashboard.onrender.com/deleterecord/${id}`).then((res)=>{
             console.log(res.data);
             mygetalldata();
             });

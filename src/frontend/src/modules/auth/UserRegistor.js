@@ -32,7 +32,7 @@ function UserRegistor() {
         }
         else {
             const { name, email, phone, city, gender, pass,sources,state } = sv;
-            const res = await fetch("http://localhost:7800/create", {
+            const res = await fetch("https://studentdatadashboard.onrender.com/create", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

@@ -26,7 +26,7 @@ function Editpage() {
       }
 
       const singledata = () => {
-        axios.get(`http://localhost:7800/view/${id}`).then((res) => {
+        axios.get(`https://studentdatadashboard.onrender.com/view/${id}`).then((res) => {
             console.log(res.data);
             sf(res.data);
         })
@@ -40,7 +40,7 @@ function Editpage() {
     const updatefuncion = async () => {
       const {name,email,phone,gender,city,pass,state,sources} = sv;
       
-      const res = await fetch(`http://localhost:7800/updaterecord/${id}`,{
+      const res = await fetch(`https://studentdatadashboard.onrender.com/updaterecord/${id}`,{
         method:"PATCH",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify({
