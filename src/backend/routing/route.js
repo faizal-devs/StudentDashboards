@@ -4,35 +4,23 @@ const route = express.Router();
 const mypatt = require('../schimapattern/schima');
 
 
-
-
-// post / create  api
-route.post("/create",async(req,res)=>{
-    const {name,email,phone,city,state,gender,pass,sources} = req.body;
-    const adduser = new mypatt({
-        name,email,phone,city,gender,pass,state,sources
-    });
-    await adduser.save();
-    res.status(200).json(adduser);
-    console.log(adduser);
-});
-
 route.get("/getdata",async(req,res)=>{
     const alldata = await mypatt.find();
     res.json(alldata);
     console.log(alldata);
 });
 
-// route.get("/filterdata",async(req,res)=>{
-//     try{
-//     const search=parseInt(req.query.search || "")
-//     const sort=parseInt(req.query.sort || "name")
-//     const datesort=parseInt(req.query.sort || "date")
-//     }catch(err){
-//         console.log(err);
-//     }
-// });
 
+// post / create  api
+route.post("/create",async(req,res)=>{
+    const {name,email,phone,city,gender,pass} = req.body;
+    const adduser = new mypatt({
+        name,email,phone,city,gender,pass
+    });
+    await adduser.save();
+    res.status(200).json(adduser);
+    console.log(adduser);
+});
 
 
 // get single data api
@@ -42,7 +30,6 @@ route.get("/view/:id",async(req,res)=>{
     console.log(singleuser);
     res.status(201).json(singleuser);
 });
-
 
 // delete api
 route.delete("/deleterecord/:id",async(req,res)=>{

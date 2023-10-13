@@ -8,30 +8,19 @@ const myschima = new mongoose.Schema({
         type:String
     },
     phone:{
-        type:Number
+        type:String
     },
     gender:{
         type:String
     },
-    sources:{
-        type:[]
-    },
-
     city:{
-        type:String
-    },
-    state:{
         type:String
     },
     pass:{
         type:String
-    },
+    }
 
-},
-{
-    timestamps: true,
-  }
-);
+});
 
-const mypattern = new mongoose.model("students",myschima);
+const mypattern = new mongoose.model("studentdata",myschima);
 module.exports = mypattern;
